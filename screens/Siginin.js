@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react';
-import { Image, StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
+import { Image, StyleSheet, Text, View, TextInput, TouchableOpacity, Dimensions } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { auth } from '../firebase';
 
@@ -14,17 +14,7 @@ function Siginin() {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const navigation = useNavigation()
-    /*
-        useEffect(() => {
-            const unsubscribes = auth.onAuthStateChanged((user) => {
-                if (user) {
-                    navigation.navigate("Home");
-                    console.log("error");
-                }
-            });
-            return unsubscribes;
-        }, []);
-    */
+   
 
 
     const signIn = () => {
@@ -43,6 +33,7 @@ function Siginin() {
 
 
     };
+//const wh=Dimensions.get("window").height
 
     return (
 
@@ -93,7 +84,8 @@ const styles = StyleSheet.create({
         backgroundColor: 'rgb(49, 47, 47)',
         alignItems: 'center',
         justifyContent: 'center',
-        width: '100%'
+        width: '100%',
+        
     },
     logo: {
         fontWeight: "bold",
